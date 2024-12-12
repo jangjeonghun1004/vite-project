@@ -1,8 +1,30 @@
-# React + Vite
+# github pages(Vite + React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    1. vite.config.js
+        base: "/vite-project" 추가
+        vite-project = github 리파지토리 네임.
 
-Currently, two official plugins are available:
+    2. package.json
+        "homepage": "https://jangjeonghun1004.github.io/vite-project" 추가
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    3. 폴더 및 파일 생성
+        ".github/workflows" 폴더 생성
+        "deploy.yml" 파일 추가
+
+    4. deploy.yml
+        파일 내용을 복사해서 붙여 넣는다.
+
+    5. github 설정
+        github -> settings -> pages -> Source -> GitHub Actions 로 전한.
+
+    
+
+     npm install gh-pages
+     "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
